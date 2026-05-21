@@ -23,24 +23,13 @@ export default class S_Spoiler extends HTMLElement {
         s-spoiler .spoiler-toggle {
           width: 100%;
           display: flex;
-          align-items: center;
           gap: var(--spacing-s);
-
-          padding:
-            var(--spacing)
-            var(--spacing-l);
-
+          padding:var(--spacing);
           border: none;
           background: none;
-
-          color: var(--mono-text1);
-
-          font:
-            var(--f-s)
-            var(--f-display-sans);
-
+          color: var(--mono-text2);
+          font: var(--f-s) var(--f-display-sans);
           text-transform: uppercase;
-
           cursor: pointer;
         }
 
@@ -80,7 +69,7 @@ export default class S_Spoiler extends HTMLElement {
       <button class="spoiler-toggle">
 
         <span class="spoiler-icon">
-          ▸
+          <i class="bi bi-chevron-right"></i>
         </span>
 
         <span class="spoiler-title">
