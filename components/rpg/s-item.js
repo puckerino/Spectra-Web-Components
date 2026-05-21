@@ -12,7 +12,16 @@ export default class SItem extends HTMLElement {
       </article>
     `;
 
-    await this.waitForItems(itemsKey);
+    const loaded = await this.waitForItems(itemsKey);
+
+    if (!loaded) {
+      this.innerHTML = `
+        <article class="s-item">
+          No se encontró window.${itemsKey}
+        </article>
+      `;
+      return;
+    }
 
     const items = window[itemsKey] || [];
     const item = items.find(i => String(i.id) === String(itemId));
@@ -20,7 +29,7 @@ export default class SItem extends HTMLElement {
     if (!item) {
       this.innerHTML = `
         <article class="s-item">
-          Item no encontrado.
+          Item no encontrado: ${itemId}
         </article>
       `;
       return;
@@ -32,14 +41,24 @@ export default class SItem extends HTMLElement {
   waitForItems(itemsKey) {
     return new Promise(resolve => {
       if (Array.isArray(window[itemsKey])) {
-        resolve();
+        resolve(true);
         return;
       }
 
+      let tries = 0;
+
       const interval = setInterval(() => {
+        tries++;
+
         if (Array.isArray(window[itemsKey])) {
           clearInterval(interval);
-          resolve();
+          resolve(true);
+          return;
+        }
+
+        if (tries > 100) {
+          clearInterval(interval);
+          resolve(false);
         }
       }, 50);
     });
