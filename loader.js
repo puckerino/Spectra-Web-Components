@@ -10,6 +10,7 @@ const COMPONENTS = {
   "s-item": "rpg/s-item.js",
 
   // UI
+  "s-audio": "ui/s-audio.js",
   "s-spoiler": "ui/s-spoiler.js",
   "s-tabs": "ui/s-tabs.js",
   "s-tab": "ui/s-tab.js",
