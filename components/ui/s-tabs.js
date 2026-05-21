@@ -84,56 +84,34 @@ export default class STabs extends HTMLElement {
         }
 
         s-tabs .s-tab-button {
-
           border: none;
           background: none;
-
           cursor: pointer;
-
-          padding:
-            var(--spacing-s)
-            var(--spacing);
-
-          border-radius:
-            var(--br-pill);
-
-          color:
-            var(--mono-text2);
-
-          font:
-            var(--f-s)
-            var(--f-display-sans);
-
-          text-transform:
-            uppercase;
-
-          transition:
-            .2s ease;
+          padding:var(--spacing-s);
+          border-radius:var(--br-pill);
+          color:var(--mono-text2);
+          font:var(--f-s) var(--f-display-sans);
+          text-transform:uppercase;
+          transition: .2s ease;
 
         }
 
         s-tabs .s-tab-button:hover {
-          background:
-            var(--mono-component1);
+          background:var(--mono-component1);
         }
 
         s-tabs .s-tab-button[active] {
-
-          background:
-            var(--mono-component2);
-
-          color:
-            var(--mono-text1);
-
+          background: var(--mono-component2);
+          color: var(--mono-text2);
         }
 
         s-tab:not([hidden]) {
-  display: block;
-}
+          display: block;
+        }
 
-s-tab[hidden] {
-  display: none;
-}
+        s-tab[hidden] {
+          display: none;
+        }
 
       `;
 
