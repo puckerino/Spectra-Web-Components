@@ -4,7 +4,7 @@ function loadComponent(tag) {
     //base dinámica (funciona desde CDN o local)
     const base = import.meta.url.replace("/loader.js", "");
 
-    import(`${base}/components/${tag}.js`)
+    import(`${base}/components/${tag}.js?v=2`)
     .then(module => {
         const comp = module.default || module;
         customElements.define(tag,comp);
