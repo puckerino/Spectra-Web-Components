@@ -12,6 +12,9 @@ function loadComponent(tag) {
     // RPG
     "s-eco": "rpg/s-eco.js",
 
+    // UI
+    "s-spoiler": "ui/s-spoiler.js"
+
   };
 
   // archivo asociado
