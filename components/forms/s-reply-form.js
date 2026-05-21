@@ -94,7 +94,9 @@ export default class SReplyForm extends HTMLElement {
 
         }
 
-        s-reply-form button {
+        s-reply-form input[type="submit"] {
+
+          width: auto;
 
           justify-self: end;
 
@@ -127,28 +129,46 @@ export default class SReplyForm extends HTMLElement {
 
       </style>
 
-<form class="s-reply-form" action="/post" method="post">
-  <input type="hidden" name="mode" value="reply">
-  <input type="hidden" name="t" value="${topicId}">
+      <form
+        class="s-reply-form"
+        action="/post"
+        method="post"
+      >
 
-  <div class="s-reply-fields">
-    ${slot}
-  </div>
+        <input
+          type="hidden"
+          name="mode"
+          value="reply"
+        >
 
-  <textarea
-    class="s-reply-output"
-    name="message"
-    id="message"
-    required
-    hidden
-  ></textarea>
+        <input
+          type="hidden"
+          name="t"
+          value="${topicId}"
+        >
 
-<input
-  type="submit"
-  name="post"
-  value="${button}"
- />
-</form>
+        <div class="s-reply-fields">
+
+          ${slot}
+
+        </div>
+
+        <textarea
+          class="s-reply-output"
+          name="message"
+          id="message"
+          placeholder="${placeholder}"
+          required
+          hidden
+        ></textarea>
+
+        <input
+          type="submit"
+          name="post"
+          value="${button}"
+        >
+
+      </form>
 
     `;
 
