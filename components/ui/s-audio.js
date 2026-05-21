@@ -1,5 +1,4 @@
-export default class SAudio {
-
+export default class SAudio extends HTMLElement {
   connectedCallback() {
 
     if (this.dataset.ready === "true") return;
