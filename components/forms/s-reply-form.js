@@ -157,8 +157,6 @@ export default class SReplyForm extends HTMLElement {
           class="s-reply-output"
           name="message"
           id="message"
-          placeholder="${placeholder}"
-          required
           hidden
         ></textarea>
 
@@ -180,10 +178,24 @@ export default class SReplyForm extends HTMLElement {
 
     form.addEventListener(
       "submit",
-      () => {
+      event => {
 
-        output.value =
+        const message =
           this.buildOutput(template);
+
+        if (!message.trim()) {
+
+          event.preventDefault();
+
+          alert(
+            "El mensaje está vacío."
+          );
+
+          return;
+
+        }
+
+        output.value = message;
 
       }
     );
