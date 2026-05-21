@@ -31,7 +31,7 @@ function loadComponent(tag) {
 
   const base = import.meta.url.replace("/loader.js", "");
 
-  import(`${base}/components/${file}?v=2`)
+  import(`${base}/components/${file}?v=3`)
     .then(module => {
       if (customElements.get(tag)) return;
 
