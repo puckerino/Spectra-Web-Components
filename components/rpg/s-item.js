@@ -124,6 +124,7 @@ export default class SItem extends HTMLElement {
 
           border-radius:
             var(--br);
+            corner-shape: squircle;
 
           background:
             var(--mono-surface2);
@@ -138,7 +139,7 @@ export default class SItem extends HTMLElement {
           gap: var(--spacing);
 
           padding:
-            var(--spacing-l);
+            var(--spacing-s);
 
         }
 
@@ -152,16 +153,14 @@ export default class SItem extends HTMLElement {
 
           justify-content: space-between;
 
-          gap: var(--spacing);
+          gap: var(--spacing-2xs);
 
         }
 
         s-item .s-item-name {
 
-          margin: 0;
-
           font:
-            300
+            bold
             var(--f-base)
             var(--f-display-sans);
             text-transform: uppercase;
@@ -238,14 +237,6 @@ export default class SItem extends HTMLElement {
 
         s-item .s-item-bonus {
 
-          border-top:
-            1px solid var(--mono-border1);
-
-          padding-top:
-            var(--spacing);
-
-          line-height: 1.5;
-
         }
 
       </style>
@@ -254,11 +245,11 @@ export default class SItem extends HTMLElement {
 
         <header class="s-item-header">
 
-          <h3 class="s-item-name">
+          <span class="s-item-name">
 
             ${nombre}
 
-          </h3>
+          </span>
 
           <div class="s-item-meta">
 
