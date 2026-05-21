@@ -127,9 +127,13 @@ export default class STabs extends HTMLElement {
 
         }
 
-        s-tab {
-          display: block;
-        }
+        s-tab:not([hidden]) {
+  display: block;
+}
+
+s-tab[hidden] {
+  display: none;
+}
 
       `;
 
