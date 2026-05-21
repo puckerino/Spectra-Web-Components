@@ -7,7 +7,7 @@ function loadComponent(tag) {
   const COMPONENTS = {
 
     // POSTS
-    "s-rol": "posts/s-rol.js",
+    "s-rol": "rol/s-rol.js",
 
     // RPG
     "s-eco": "rpg/s-eco.js",
