@@ -25,17 +25,6 @@ export default class SCopy extends HTMLElement {
           border-bottom: 1px solid var(--mono-border1);
         }
 
-        s-copy .s-copy-btn {
-          border: 1px solid var(--mono-border1);
-          background: var(--mono-surface1);
-          color: var(--mono-text1);
-          border-radius: var(--br-pill);
-          padding: var(--spacing-2xs) var(--spacing-s);
-          cursor: pointer;
-          font: var(--f-s) var(--f-display-sans);
-          text-transform: uppercase;
-        }
-
         s-copy .s-copy-content {
           padding: var(--spacing);
           white-space: pre-wrap;
