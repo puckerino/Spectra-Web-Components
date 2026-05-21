@@ -136,12 +136,9 @@ export default class SAudio extends HTMLElement {
 
       <article class="s-audio">
 
-        <button
-          class="s-audio-button"
-          type="button"
-        >
+        <button class="s-audio-button" type="button">
 
-          ▶
+          <i class="bi bi-play-fill"></i>
 
         </button>
 
@@ -149,11 +146,7 @@ export default class SAudio extends HTMLElement {
 
           <div class="s-audio-title">
 
-            ${
-              titulo ||
-              "Audio"
-
-            }
+            ${titulo || "Audio"}
 
           </div>
 
@@ -205,7 +198,6 @@ export default class SAudio extends HTMLElement {
     if (!this.iframe.contentWindow)
       return;
 
-    // PLAY
     if (!this.playing) {
 
       this.iframe.contentWindow.postMessage(
@@ -225,7 +217,6 @@ export default class SAudio extends HTMLElement {
 
     }
 
-    // PAUSE
     else {
 
       this.iframe.contentWindow.postMessage(
@@ -249,7 +240,6 @@ export default class SAudio extends HTMLElement {
 
   getVideoId(url) {
 
-    // ya es un id
     if (
       /^[a-zA-Z0-9_-]{11}$/.test(url)
     ) {
@@ -263,7 +253,6 @@ export default class SAudio extends HTMLElement {
       const parsed =
         new URL(url);
 
-      // youtube.com/watch?v=
       if (
         parsed.hostname.includes(
           "youtube.com"
@@ -274,7 +263,6 @@ export default class SAudio extends HTMLElement {
 
       }
 
-      // youtu.be/
       if (
         parsed.hostname.includes(
           "youtu.be"
