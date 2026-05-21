@@ -16,7 +16,7 @@ function loadComponent(tag) {
     "s-spoiler": "ui/s-spoiler.js"
     "s-tabs": "ui/s-tabs.js",
     "s-tab": "ui/s-tab.js",
-    "s-accordion": "ui/s-accordion.js",
+    "s-accordion": "ui/s-accordion.js"
 
   };
 
