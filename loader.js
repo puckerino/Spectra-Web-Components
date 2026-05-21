@@ -9,9 +9,6 @@ const COMPONENTS = {
   "s-eco": "rpg/s-eco.js",
   "s-item": "rpg/s-item.js",
 
-  // FORMS
-  "s-reply-form": "forms/s-reply-form.js",
-
   // UI
   "s-spoiler": "ui/s-spoiler.js",
   "s-tabs": "ui/s-tabs.js",
