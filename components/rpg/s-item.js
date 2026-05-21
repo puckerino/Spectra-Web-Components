@@ -4,7 +4,7 @@ export default class SItem extends HTMLElement {
     this.dataset.ready = "true";
 
     const itemId = this.getAttribute("item-id") || "";
-    const itemsKey = this.getAttribute("items-key") || "TIENDA_HABILIDADES";
+    const itemsKey = this.getAttribute("items-key") || "TIENDA_ITEMS";
 
     this.innerHTML = `
       <article class="s-item">
