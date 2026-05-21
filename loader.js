@@ -1,41 +1,93 @@
 function loadComponent(tag) {
-    if (customElements.get(tag)) return;
 
-    //base dinámica (funciona desde CDN o local)
-    const base = import.meta.url.replace("/loader.js", "");
+  // evitar registrar dos veces
+  if (customElements.get(tag)) return;
 
-    import(`${base}/components/${tag}.js`)
+  // mapa de componentes
+  const COMPONENTS = {
+
+    // POSTS
+    "s-rol": "posts/s-rol.js",
+
+    // RPG
+    "s-eco": "rpg/s-eco.js",
+
+  };
+
+  // archivo asociado
+  const file = COMPONENTS[tag];
+
+  // si no existe en el mapa
+  if (!file) return;
+
+  // base dinámica
+  const base =
+    import.meta.url.replace("/loader.js", "");
+
+  // importar componente
+  import(`${base}/components/${file}?v=1`)
     .then(module => {
-        const comp = module.default || module;
-        customElements.define(tag,comp);
+
+      const comp =
+        module.default || module;
+
+      customElements.define(tag, comp);
+
     })
-    .catch(() => {
-        //opcional: ignorar si no existe
+    .catch(err => {
+
+      console.error(
+        `Error cargando ${tag}`,
+        err
+      );
+
     });
+
 }
 
 function scan(root = document) {
-    root.querySelectorAll("*").forEach(el => {
-        if(el.tagName.includes("-")) {
-            loadComponent(el.tagName.toLowerCase());
-        }
+
+  root
+    .querySelectorAll("*")
+    .forEach(el => {
+
+      if (
+        el.tagName.includes("-")
+      ) {
+
+        loadComponent(
+          el.tagName.toLowerCase()
+        );
+
+      }
+
     });
+
 }
 
-//cargar inicial
+// carga inicial
 scan();
 
 // observar cambios dinámicos
-
 new MutationObserver(mutations => {
-    mutations.forEach(m => {
-        m.addedNodes.forEach(node => {
-            if (node.nodeType === 1) {
-                scan(node);
-            }
-        });
+
+  mutations.forEach(m => {
+
+    m.addedNodes.forEach(node => {
+
+      if (node.nodeType === 1) {
+
+        scan(node);
+
+      }
+
     });
+
+  });
+
 }).observe(document.body, {
-    childList: true,
-    subtree: true
+
+  childList: true,
+  subtree: true
+
 });
