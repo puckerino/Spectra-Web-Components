@@ -127,37 +127,28 @@ export default class SReplyForm extends HTMLElement {
 
       </style>
 
-      <form
-        class="s-reply-form"
-        action="/post?t=${topicId}&mode=reply"
-        method="post"
-      >
+<form class="s-reply-form" action="/post" method="post">
+  <input type="hidden" name="mode" value="reply">
+  <input type="hidden" name="t" value="${topicId}">
 
-        <div class="s-reply-fields">
+  <div class="s-reply-fields">
+    ${slot}
+  </div>
 
-          ${slot}
+  <textarea
+    class="s-reply-output"
+    name="message"
+    id="message"
+    required
+    hidden
+  ></textarea>
 
-        </div>
-
-        <textarea
-          class="s-reply-output"
-          name="message"
-          placeholder="${placeholder}"
-          required
-          hidden
-        ></textarea>
-
-        <button
-          type="submit"
-          name="post"
-          value="Enviar"
-        >
-
-          ${button}
-
-        </button>
-
-      </form>
+<input
+  type="submit"
+  name="post"
+  value="${button}"
+ />
+</form>
 
     `;
 
