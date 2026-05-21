@@ -112,7 +112,7 @@ export default class SAccordion extends HTMLElement {
         </span>
 
         <span class="s-accordion-icon">
-          ▾
+          <i class="bi bi-chevron-down"></i>
         </span>
 
       </button>
