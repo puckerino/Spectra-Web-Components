@@ -13,7 +13,7 @@ function loadComponent(tag) {
     "s-eco": "rpg/s-eco.js",
 
     // UI
-    "s-spoiler": "ui/s-spoiler.js"
+    "s-spoiler": "ui/s-spoiler.js",
     "s-tabs": "ui/s-tabs.js",
     "s-tab": "ui/s-tab.js",
     "s-accordion": "ui/s-accordion.js"
