@@ -216,7 +216,7 @@ export default class SItem extends HTMLElement {
 
           ${
             imagen
-              ? `<img src="${imagen}" alt="${nombre}">`
+              ? `${imagen}`
               : ""
           }
 
