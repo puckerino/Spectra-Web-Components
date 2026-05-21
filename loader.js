@@ -8,6 +8,9 @@ function loadComponent(tag) {
 
     // POSTS
     "s-rol": "rol/s-rol.js",
+    "s-timeline": "rol/s-timeline.js",
+    "s-event": "rol/s-event.js",
+    "s-location": "rol/s-location.js",
 
     // RPG
     "s-eco": "rpg/s-eco.js",
