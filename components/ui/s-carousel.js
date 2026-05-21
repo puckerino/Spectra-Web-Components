@@ -38,17 +38,6 @@ export default class SCarousel extends HTMLElement {
           margin-top: var(--spacing);
         }
 
-        s-carousel .s-carousel-btn {
-          border: 1px solid var(--mono-border1);
-          background: var(--mono-surface2);
-          color: var(--mono-text1);
-          border-radius: var(--br-pill);
-          padding: var(--spacing-xs) var(--spacing);
-          cursor: pointer;
-          font: var(--f-s) var(--f-display-sans);
-          text-transform: uppercase;
-        }
-
         s-carousel .s-carousel-dots {
           display: flex;
           justify-content: center;
