@@ -14,6 +14,7 @@ function loadComponent(tag) {
 
     // RPG
     "s-eco": "rpg/s-eco.js",
+    "s-item": "rpg/s-item.js",
 
     // UI
     "s-spoiler": "ui/s-spoiler.js",
